@@ -65,7 +65,7 @@ async function sendMessage() {
         console.error("Error de conexión:", error);
         const loadingElem = document.getElementById(loadingId);
         if (loadingElem) loadingElem.remove();
-        appendMessage("Error al conectar con el asistente. Verifica que el servidor local esté corriendo.", "bot");
+        appendMessage("Error al conectar con el asistente.", "bot");
     }
 }
 
