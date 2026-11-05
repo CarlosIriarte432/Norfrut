@@ -1,5 +1,5 @@
-// Apunta a tu backend desplegado en Render (Seguridad total, sin API keys expuestas)
-const API_URL = "https://santaelvira.onrender.com/api/chat";
+// Apunta a tu backend local para pruebas
+const API_URL = "https://norfrut.onrender.com/api/chat";
 
 function toggleChat() {
     const chatWindow = document.getElementById("chat-window");
@@ -21,6 +21,12 @@ async function sendMessage() {
 
     if (!userMessage) return;
 
+    // Ocultar opciones rápidas si el usuario decide escribir[cite: 9]
+    const quickOptions = document.getElementById("quick-options");
+    if (quickOptions) {
+        quickOptions.style.display = 'none';
+    }
+
     appendMessage(userMessage, "user");
     inputField.value = "";
 
@@ -40,12 +46,12 @@ async function sendMessage() {
         if (response.ok && data.choices && data.choices[0].message.content) {
             let botReply = data.choices[0].message.content;
             
-            // Limpieza de formato markdown de la IA
+            // Limpieza de formato markdown de la IA[cite: 9]
             botReply = botReply.replaceAll('**', '').replaceAll('*', '');
             appendMessage(botReply, "bot");
 
-            // Evaluación de intención de contacto
-            const contactKeywords = ['whatsapp', 'contacto', 'formulario', 'pedido'];
+            // Evaluación de intención de contacto[cite: 9]
+            const contactKeywords = ['contacto', 'cotizar', 'equipo comercial', 'exportación'];
             const requiresContact = contactKeywords.some(keyword => botReply.toLowerCase().includes(keyword));
 
             if (requiresContact) {
@@ -59,38 +65,8 @@ async function sendMessage() {
         console.error("Error de conexión:", error);
         const loadingElem = document.getElementById(loadingId);
         if (loadingElem) loadingElem.remove();
-        appendMessage("Error al conectar con el asistente.", "bot");
+        appendMessage("Error al conectar con el asistente. Verifica que el servidor local esté corriendo.", "bot");
     }
-}
-
-function appendContactActions() {
-    const chatBox = document.getElementById("chatBox");
-    const actionsDiv = document.createElement("div");
-    
-    // Contenedor minimalista alineado al bot
-    actionsDiv.classList.add("flex", "gap-2", "mt-2", "mb-3", "self-start");
-
-    // Enlace a WhatsApp
-    const waBtn = document.createElement("a");
-    waBtn.href = "https://wa.me/56900000000"; // Reemplazar con el número real del cliente
-    waBtn.target = "_blank";
-    waBtn.classList.add("bg-green-600", "text-white", "text-xs", "font-bold", "px-4", "py-2", "rounded-lg", "shadow-sm", "hover:bg-green-700", "transition-colors");
-    waBtn.textContent = "WhatsApp";
-
-    // Botón de redirección al formulario
-    const formBtn = document.createElement("button");
-    formBtn.onclick = () => {
-        // Redirige al id="contacto" ya existente en tu index.html y oculta el chat
-        document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
-        toggleChat(); 
-    };
-    formBtn.classList.add("bg-red-600", "text-white", "text-xs", "font-bold", "px-4", "py-2", "rounded-lg", "shadow-sm", "hover:bg-red-700", "transition-colors");
-    formBtn.textContent = "Ir al Formulario";
-
-    actionsDiv.appendChild(waBtn);
-    actionsDiv.appendChild(formBtn);
-    chatBox.appendChild(actionsDiv);
-    chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 function appendMessage(text, sender) {
@@ -102,11 +78,9 @@ function appendMessage(text, sender) {
     msgDiv.classList.add("message", "p-3", "rounded-2xl", "max-w-[85%]", "text-sm", "leading-relaxed", "shadow-sm");
     
     if (sender === "user") {
-        // Estilo de burbuja del usuario (Rojo corporativo)
-        msgDiv.classList.add("bg-red-600", "text-white", "self-end", "rounded-br-sm");
+        msgDiv.classList.add("bg-norfrut-navy", "text-white", "self-end", "rounded-br-sm");
     } else {
-        // Estilo de burbuja del bot (Fondo blanco, diseño limpio)
-        msgDiv.classList.add("bg-white", "border", "border-stone-200", "text-stone-700", "self-start", "rounded-bl-sm");
+        msgDiv.classList.add("bg-white", "border", "border-gray-200", "text-gray-700", "self-start", "rounded-bl-sm");
     }
     
     msgDiv.textContent = text;
@@ -120,4 +94,24 @@ function handleKeyPress(event) {
     if (event.key === "Enter") {
         sendMessage();
     }
+}
+
+function appendContactActions() {
+    const chatBox = document.getElementById("chatBox");
+    const actionsDiv = document.createElement("div");
+    
+    actionsDiv.classList.add("flex", "gap-2", "mt-2", "mb-3", "self-start");
+
+    const formBtn = document.createElement("button");
+    formBtn.onclick = () => {
+        document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+        toggleChat(); 
+    };
+    // Estilos alineados con la paleta de Norfrut[cite: 9]
+    formBtn.classList.add("bg-norfrut-navy", "text-white", "text-xs", "font-bold", "px-4", "py-2", "rounded-lg", "shadow-sm", "hover:bg-norfrut-green", "transition-colors");
+    formBtn.textContent = "Cotizar / Ir al Formulario";
+
+    actionsDiv.appendChild(formBtn);
+    chatBox.appendChild(actionsDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
