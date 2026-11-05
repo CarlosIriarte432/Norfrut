@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Configuración de datos. Añade las rutas de tus imágenes en 'img'
     const productosData = {
         mandarinas: {
-            titulo: 'Mandarinas', color: 'text-norfrut-orange', img: './frontend/src/mandarinas.png',
+            titulo: 'Mandarinas', color: 'text-norfrut-orange', img: './frontend/src/frutas/mandarinas.jpg',
             meses: ['Junio', 'Julio', 'Agosto', 'Septiembre'],
             variedades: [ { nombre: 'Murcott', disp: { 'Junio': [0,0,0,1], 'Julio': [1,1,1,1], 'Agosto': [1,1,1,1], 'Septiembre': [1,1,0,0] } } ]
         },
         naranjas: {
-            titulo: 'Naranjas', color: 'text-norfrut-red', img: './frontend/src/naranjas.png',
+            titulo: 'Naranjas', color: 'text-norfrut-red', img: './frontend/src/frutas/naranjas.png',
             meses: ['Junio', 'Julio'],
             variedades: [
                 { nombre: 'Cara Cara', disp: { 'Julio': [0,1,1,1] } },
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         uvas: {
-            titulo: 'Uvas', color: 'text-norfrut-green', img: './frontend/src/uvas.png',
+            titulo: 'Uvas', color: 'text-norfrut-green', img: './frontend/src/frutas/uvas.png',
             meses: ['Noviembre', 'Diciembre', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
             variedades: [
                 { categoria: 'Seedless Verde' },
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         clementinas: {
-            titulo: 'Clementinas', color: 'text-norfrut-orange', img: './frontend/src/clementinas.png',
+            titulo: 'Clementinas', color: 'text-norfrut-orange', img: './frontend/src/frutas/clementinas.png',
             meses: ['Abril', 'Mayo', 'Junio'],
             variedades: [
                 { nombre: 'Clemenules', disp: { 'Abril': [0,0,0,1], 'Mayo': [1,1,1,1], 'Junio': [1,1,0,0] } },
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         cerezas: {
-            titulo: 'Cerezas', color: 'text-red-700', img: './frontend/src/cerezas.png',
+            titulo: 'Cerezas', color: 'text-red-700', img: './frontend/src/frutas/cerezas.png',
             meses: ['Octubre', 'Noviembre', 'Diciembre'],
             variedades: [
                 { nombre: 'Lapins', disp: { 'Octubre': [0,0,0,1], 'Noviembre': [1,1,1,1], 'Diciembre': [1,0,0,0] } },
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         arandanos: {
-            titulo: 'Arándanos', color: 'text-norfrut-navy', img: './frontend/src/arandanos.png',
+            titulo: 'Arándanos', color: 'text-norfrut-navy', img: './frontend/src/frutas/arandanos.png',
             meses: ['Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
             variedades: [
                 { nombre: 'Emerald', disp: { 'Octubre': [1,1,1,1], 'Noviembre': [1,1,1,1], 'Diciembre': [1,0,0,0] } },
