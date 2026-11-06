@@ -1,5 +1,5 @@
 // Apunta a tu backend local para pruebas
-const API_URL = "http://localhost:3000/api/chat";
+const API_URL = "https://norfrut.onrender.com/api/chat";
 
 function toggleChat() {
     const chatWindow = document.getElementById("chat-window");
