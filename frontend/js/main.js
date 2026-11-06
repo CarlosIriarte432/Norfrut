@@ -196,3 +196,68 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSlider();
         });
     });
+    // --- Lógica de Tarjetas de Contacto ---
+    const contactCards = document.querySelectorAll('.contact-card');
+    const formWrapper = document.getElementById('form-wrapper');
+    const inputTipoContacto = document.getElementById('tipo_contacto');
+    const formTitulo = document.getElementById('form-titulo');
+    
+    const gruposDinamicos = {
+        cotizacion: document.getElementById('grupo-cotizacion'),
+        consulta: document.getElementById('grupo-consulta'),
+        opinion: document.getElementById('grupo-opinion')
+    };
+
+    contactCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const type = card.getAttribute('data-type');
+            
+            contactCards.forEach(c => {
+                c.classList.remove('border-norfrut-green', 'border-norfrut-orange', 'border-norfrut-red', 'bg-gray-50');
+                c.classList.add('border-gray-200', 'bg-white');
+                c.querySelector('svg').classList.remove('text-norfrut-green', 'text-norfrut-orange', 'text-norfrut-red');
+                c.querySelector('svg').classList.add('text-gray-400');
+            });
+
+            card.classList.remove('border-gray-200', 'bg-white');
+            card.classList.add('bg-gray-50');
+            
+            if (type === 'cotizacion') {
+                card.classList.add('border-norfrut-orange');
+                card.querySelector('svg').classList.remove('text-gray-400');
+                card.querySelector('svg').classList.add('text-norfrut-orange');
+            } else if (type === 'consulta') {
+                card.classList.add('border-norfrut-green');
+                card.querySelector('svg').classList.remove('text-gray-400');
+                card.querySelector('svg').classList.add('text-norfrut-green');
+            } else if (type === 'opinion') {
+                card.classList.add('border-norfrut-red');
+                card.querySelector('svg').classList.remove('text-gray-400');
+                card.querySelector('svg').classList.add('text-norfrut-red');
+            }
+
+            Object.values(gruposDinamicos).forEach(g => {
+                g.classList.add('hidden');
+                g.classList.remove('grid');
+            });
+
+            if (gruposDinamicos[type]) {
+                gruposDinamicos[type].classList.remove('hidden');
+                gruposDinamicos[type].classList.add('grid');
+            }
+
+            // ACTUALIZACIÓN DE TÍTULO PARA I18N
+            inputTipoContacto.value = type;
+            const llaveTraduccion = `contacto.form_${type}`;
+            formTitulo.setAttribute('data-i18n', llaveTraduccion);
+            
+            const lang = localStorage.getItem('norfrut-idioma') || 'es';
+            if (window.diccionario[lang] && window.diccionario[lang][llaveTraduccion]) {
+                formTitulo.innerHTML = window.diccionario[lang][llaveTraduccion];
+            }
+
+            formWrapper.classList.remove('hidden');
+            setTimeout(() => { formWrapper.classList.remove('opacity-0'); }, 50);
+            formWrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    });

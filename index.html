@@ -397,77 +397,140 @@
         </div>
     </section>
 
-    <!-- Contacto Form -->
-    <section id="contacto" class="py-24 relative overflow-hidden bg-gray-50">
-        <div class="absolute top-0 right-0 -mt-20 w-96 h-96 bg-norfrut-green/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-norfrut-orange/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Contacto Form & Mapa -->
+    <section id="contacto" class="py-24 relative bg-gray-50">
+        
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 pointer-events-none"></div>
 
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-duration="800">
             
-            <div class="text-center mb-16">
-                <h2 data-i18n="contacto.titulo" class="text-3xl font-bold text-norfrut-navy uppercase tracking-wide">Contacto Comercial</h2>
+            <!-- Título y Subtítulo -->
+            <div class="text-center mb-10">
+                <h2 data-i18n="contacto.titulo" class="text-3xl font-bold text-norfrut-navy uppercase tracking-wide">Contáctanos</h2>
                 <div class="w-24 h-1 bg-norfrut-green mx-auto mt-4 mb-6"></div>
                 <p data-i18n="contacto.desc" class="text-gray-600 max-w-2xl mx-auto text-lg">
-                    Complete el formulario a continuación y nuestro equipo comercial se pondrá en contacto con usted a la brevedad.
+                    Seleccione el tipo de requerimiento y nuestro equipo comercial se pondrá en contacto con usted a la brevedad.
                 </p>
             </div>
             
-            <div class="bg-white rounded-3xl shadow-[0_20px_50px_-12px_rgba(0,32,63,0.15)] border border-gray-100 overflow-hidden flex flex-col lg:flex-row relative">
+            <!-- Tarjetas de Selección -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
+                <div class="contact-card cursor-pointer bg-white border-2 border-gray-200 rounded-xl p-6 text-center shadow-sm hover:border-norfrut-orange hover:shadow-md transition-all group" data-type="cotizacion">
+                    <svg class="w-10 h-10 mx-auto text-gray-400 group-hover:text-norfrut-orange mb-3 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <h3 data-i18n="contacto.card_cotizacion" class="font-bold text-norfrut-navy text-lg">Cotización</h3>
+                </div>
+                <div class="contact-card cursor-pointer bg-white border-2 border-gray-200 rounded-xl p-6 text-center shadow-sm hover:border-norfrut-green hover:shadow-md transition-all group" data-type="consulta">
+                    <svg class="w-10 h-10 mx-auto text-gray-400 group-hover:text-norfrut-green mb-3 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <h3 data-i18n="contacto.card_consulta" class="font-bold text-norfrut-navy text-lg">Consulta</h3>
+                </div>
+                <div class="contact-card cursor-pointer bg-white border-2 border-gray-200 rounded-xl p-6 text-center shadow-sm hover:border-norfrut-red hover:shadow-md transition-all group" data-type="opinion">
+                    <svg class="w-10 h-10 mx-auto text-gray-400 group-hover:text-norfrut-red mb-3 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                    <h3 data-i18n="contacto.card_opinion" class="font-bold text-norfrut-navy text-lg">Opinión / Comentario</h3>
+                </div>
+            </div>
+
+            <!-- Contenedor del Formulario -->
+            <div id="form-wrapper" class="bg-white rounded-3xl shadow-[0_20px_50px_-12px_rgba(0,32,63,0.15)] border border-gray-100 overflow-hidden flex flex-col lg:flex-row relative transform-gpu hidden transition-all opacity-0 duration-500">
                 <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-norfrut-green via-norfrut-orange to-norfrut-green z-10"></div>
                 
-                <div class="w-full lg:w-5/12 h-96 lg:h-auto relative">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27663.784964645227!2d-71.2721867!3d-29.9234857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691ca6f130ce05f%3A0x6bba3bc7be6daec1!2sLa%20Serena%2C%20Coquimbo!5e0!3m2!1ses-419!2scl!4v1700000000000!5m2!1ses-419!2scl" class="absolute inset-0 w-full h-full border-0 filter contrast-[0.95]" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="w-full lg:w-5/12 h-96 lg:h-auto relative bg-gray-200">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27663.784964645227!2d-71.2721867!3d-29.9234857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691ca6f130ce05f%3A0x6bba3bc7be6daec1!2sLa%20Serena%2C%20Coquimbo!5e0!3m2!1ses-419!2scl!4v1700000000000!5m2!1ses-419!2scl" title="Ubicación Norfrut" class="absolute inset-0 w-full h-full border-0 filter contrast-[0.95]" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <div class="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent hidden lg:block pointer-events-none"></div>
                 </div>
 
                 <div class="w-full lg:w-7/12 p-8 sm:p-12 lg:p-14 bg-white relative z-0">
+                    <!-- Título Dinámico del Formulario -->
+                    <h3 id="form-titulo" data-i18n="contacto.form_base" class="text-2xl font-bold text-norfrut-navy mb-8 border-b pb-4">Formulario de Contacto</h3>
+                    
                     <form id="contact-form" class="space-y-7">
+                        <input type="hidden" id="tipo_contacto" name="tipo_contacto" value="">
+
+                        <!-- Campos Comunes -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label data-i18n="contacto.lbl_tipo" class="block text-sm font-medium text-gray-700 mb-1.5">Tipo de contacto *</label>
-                                <select id="tipo_contacto" required class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:ring-norfrut-green focus:bg-white px-4 py-2.5 border transition-colors">
-                                    <option value="">---</option>
-                                    <option data-i18n="contacto.opt1" value="Consulta">Consulta</option>
-                                    <option data-i18n="contacto.opt2" value="Opinion">Opinión</option>
-                                    <option data-i18n="contacto.opt3" value="Solicitud">Solicitud</option>
-                                    <option data-i18n="contacto.opt4" value="Cotizacion">Cotización</option>
+                                <label data-i18n="contacto.lbl_nombre" class="block text-sm font-medium text-gray-700 mb-1.5">Nombre completo *</label>
+                                <input type="text" id="nombre" required class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:bg-white px-4 py-2.5 border outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label data-i18n="contacto.lbl_email" class="block text-sm font-medium text-gray-700 mb-1.5">Correo electrónico *</label>
+                                <input type="email" id="email" required class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:bg-white px-4 py-2.5 border outline-none transition-colors">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label data-i18n="contacto.lbl_telefono" class="block text-sm font-medium text-gray-700 mb-1.5">Teléfono</label>
+                                <input type="tel" id="telefono" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:bg-white px-4 py-2.5 border outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label data-i18n="contacto.lbl_empresa" class="block text-sm font-medium text-gray-700 mb-1.5">Empresa</label>
+                                <input type="text" id="empresa" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:bg-white px-4 py-2.5 border outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-6">
+                            <div>
+                                <label data-i18n="contacto.lbl_pais" class="block text-sm font-medium text-gray-700 mb-1.5">País</label>
+                                <input type="text" id="pais" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:bg-white px-4 py-2.5 border outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <!-- Cotización -->
+                        <div id="grupo-cotizacion" class="hidden grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label data-i18n="contacto.lbl_producto" class="block text-sm font-medium text-gray-700 mb-1.5">Producto de interés</label>
+                                <select id="producto_interes" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:bg-white px-4 py-2.5 border outline-none transition-colors">
+                                    <option value="" data-i18n="contacto.opt_seleccione">-- Seleccione --</option>
+                                    <option value="Uvas" data-i18n="prod.uvas">Uvas</option>
+                                    <option value="Citricos" data-i18n="contacto.opt_citricos">Cítricos</option>
+                                    <option value="Cerezas" data-i18n="prod.cerezas">Cerezas</option>
+                                    <option value="Arandanos" data-i18n="prod.arandanos">Arándanos</option>
                                 </select>
                             </div>
                             <div>
-                                <label data-i18n="contacto.lbl_nombre" class="block text-sm font-medium text-gray-700 mb-1.5">Nombre completo *</label>
-                                <input type="text" id="nombre" required class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:ring-norfrut-green focus:bg-white px-4 py-2.5 border transition-colors">
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label data-i18n="contacto.lbl_email" class="block text-sm font-medium text-gray-700 mb-1.5">Correo electrónico *</label>
-                                <input type="email" id="email" required class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:ring-norfrut-green focus:bg-white px-4 py-2.5 border transition-colors">
-                            </div>
-                            <div>
-                                <label data-i18n="contacto.lbl_telefono" class="block text-sm font-medium text-gray-700 mb-1.5">Teléfono</label>
-                                <input type="tel" id="telefono" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:ring-norfrut-green focus:bg-white px-4 py-2.5 border transition-colors">
+                                <label data-i18n="contacto.lbl_volumen" class="block text-sm font-medium text-gray-700 mb-1.5">Volumen estimado</label>
+                                <input type="text" id="volumen" data-i18n-placeholder="contacto.ph_volumen" placeholder="Ej: 2 Contenedores" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:bg-white px-4 py-2.5 border outline-none transition-colors">
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Consulta -->
+                        <div id="grupo-consulta" class="hidden grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label data-i18n="contacto.lbl_empresa" class="block text-sm font-medium text-gray-700 mb-1.5">Empresa</label>
-                                <input type="text" id="empresa" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:ring-norfrut-green focus:bg-white px-4 py-2.5 border transition-colors">
+                                <label data-i18n="contacto.lbl_departamento" class="block text-sm font-medium text-gray-700 mb-1.5">Departamento</label>
+                                <select id="departamento" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:bg-white px-4 py-2.5 border outline-none transition-colors">
+                                    <option value="" data-i18n="contacto.opt_seleccione">-- Seleccione --</option>
+                                    <option value="Comercial" data-i18n="contacto.opt_comercial">Comercial / Ventas</option>
+                                    <option value="Logistica" data-i18n="contacto.opt_logistica">Logística</option>
+                                    <option value="Administracion" data-i18n="contacto.opt_admin">Administración</option>
+                                </select>
                             </div>
                             <div>
-                                <label data-i18n="contacto.lbl_pais" class="block text-sm font-medium text-gray-700 mb-1.5">País</label>
-                                <input type="text" id="pais" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:ring-norfrut-green focus:bg-white px-4 py-2.5 border transition-colors">
+                                <label data-i18n="contacto.lbl_asunto" class="block text-sm font-medium text-gray-700 mb-1.5">Asunto</label>
+                                <input type="text" id="asunto" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:bg-white px-4 py-2.5 border outline-none transition-colors">
                             </div>
                         </div>
 
+                        <!-- Opinión -->
+                        <div id="grupo-opinion" class="hidden grid-cols-1 gap-6">
+                            <div>
+                                <label data-i18n="contacto.lbl_tipo_opinion" class="block text-sm font-medium text-gray-700 mb-1.5">Tipo de comentario</label>
+                                <select id="tipo_opinion" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:bg-white px-4 py-2.5 border outline-none transition-colors">
+                                    <option value="" data-i18n="contacto.opt_seleccione">-- Seleccione --</option>
+                                    <option value="Sugerencia" data-i18n="contacto.opt_sugerencia">Sugerencia</option>
+                                    <option value="Felicitacion" data-i18n="contacto.opt_felicitacion">Felicitación</option>
+                                    <option value="Reclamo" data-i18n="contacto.opt_reclamo">Reclamo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Mensaje -->
                         <div>
-                            <label data-i18n="contacto.lbl_mensaje" class="block text-sm font-medium text-gray-700 mb-1.5">Mensaje</label>
-                            <textarea id="mensaje" rows="4" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:ring-norfrut-green focus:bg-white px-4 py-2.5 border transition-colors resize-none"></textarea>
+                            <label data-i18n="contacto.lbl_mensaje" class="block text-sm font-medium text-gray-700 mb-1.5">Mensaje detallado</label>
+                            <textarea id="mensaje" rows="4" class="block w-full rounded-lg border-gray-200 bg-gray-50/50 shadow-sm focus:border-norfrut-green focus:bg-white px-4 py-2.5 border outline-none transition-colors resize-none"></textarea>
                         </div>
                         
                         <div class="pt-2">
-                            <button data-i18n="contacto.btn_enviar" type="submit" class="w-full sm:w-auto sm:px-12 flex justify-center py-3 border border-transparent rounded-lg shadow-md text-lg font-medium text-white bg-norfrut-navy hover:bg-norfrut-green transition-all transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-norfrut-green">
+                            <button data-i18n="contacto.btn_enviar" type="submit" class="w-full sm:w-auto sm:px-12 flex justify-center py-3 border border-transparent rounded-lg shadow-md text-lg font-medium text-white bg-norfrut-navy hover:bg-norfrut-green transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-norfrut-green">
                                 Enviar Mensaje
                             </button>
                         </div>

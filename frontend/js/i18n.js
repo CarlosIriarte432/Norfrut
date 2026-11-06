@@ -37,9 +37,36 @@ window.diccionario = {
         "cert.titulo": "Seguridad Alimentaria", "cert.desc": "Contamos con 3 certificaciones internacionales, cuyas auditorías continuas aseguran la trazabilidad desde el cultivo hasta la recepción final por parte del consumidor.",
         "cert.c1": "Normas internacionalmente reconocidas sobre las buenas prácticas agrícolas gestionadas por Food Plus GmbH.", "cert.c2": "Método operativo estructurado para identificar riesgos de inocuidad alimentaria y evitar peligros.", "cert.c3": "Esquema de auditoría evaluado por Global Food Safety Initiative (GFSI) que cubre GAP y GMP.",
         // Contacto
-        "contacto.titulo": "Contacto Comercial", "contacto.desc": "Complete el formulario a continuación y nuestro equipo comercial se pondrá en contacto con usted a la brevedad.",
-        "contacto.lbl_tipo": "Tipo de contacto *", "contacto.opt1": "Consulta", "contacto.opt2": "Opinión", "contacto.opt3": "Solicitud", "contacto.opt4": "Cotización",
-        "contacto.lbl_nombre": "Nombre completo *", "contacto.lbl_email": "Correo electrónico *", "contacto.lbl_telefono": "Teléfono", "contacto.lbl_empresa": "Empresa", "contacto.lbl_pais": "País", "contacto.lbl_mensaje": "Mensaje", "contacto.btn_enviar": "Enviar Mensaje",
+        "contacto.titulo": "Contáctanos", 
+        "contacto.desc": "Seleccione el tipo de requerimiento y nuestro equipo comercial se pondrá en contacto con usted a la brevedad.",
+        "contacto.card_cotizacion": "Cotización",
+        "contacto.card_consulta": "Consulta",
+        "contacto.card_opinion": "Opinión / Comentario",
+        "contacto.form_base": "Formulario de Contacto",
+        "contacto.form_cotizacion": "Formulario de Cotización",
+        "contacto.form_consulta": "Formulario de Consulta",
+        "contacto.form_opinion": "Formulario de Opinión",
+        "contacto.lbl_nombre": "Nombre completo *", 
+        "contacto.lbl_email": "Correo electrónico *", 
+        "contacto.lbl_telefono": "Teléfono", 
+        "contacto.lbl_empresa": "Empresa", 
+        "contacto.lbl_pais": "País", 
+        "contacto.lbl_mensaje": "Mensaje detallado", 
+        "contacto.lbl_producto": "Producto de interés",
+        "contacto.lbl_volumen": "Volumen estimado",
+        "contacto.ph_volumen": "Ej: 2 Contenedores",
+        "contacto.opt_seleccione": "-- Seleccione --",
+        "contacto.opt_citricos": "Cítricos",
+        "contacto.lbl_departamento": "Departamento",
+        "contacto.opt_comercial": "Comercial / Ventas",
+        "contacto.opt_logistica": "Logística",
+        "contacto.opt_admin": "Administración",
+        "contacto.lbl_asunto": "Asunto",
+        "contacto.lbl_tipo_opinion": "Tipo de comentario",
+        "contacto.opt_sugerencia": "Sugerencia",
+        "contacto.opt_felicitacion": "Felicitación",
+        "contacto.opt_reclamo": "Reclamo",
+        "contacto.btn_enviar": "Enviar Mensaje",
         // Footer
         "footer.desc": "Llevando la mejor fruta de Chile al mundo. Pasión por la calidad, respeto por el medio ambiente y compromiso con nuestros clientes internacionales.",
         "footer.sec_tit": "Secciones", "footer.cont_tit": "Contacto", "footer.dir": "Ruta 5 Norte Km. 471<br>La Serena, Región de Coquimbo",
@@ -85,9 +112,36 @@ window.diccionario = {
         "cert.titulo": "Food Safety", "cert.desc": "We hold 3 international certifications, whose continuous audits ensure traceability from cultivation to final receipt by the consumer.",
         "cert.c1": "Internationally recognized standards for good agricultural practices managed by Food Plus GmbH.", "cert.c2": "Structured operating method to identify food safety risks and prevent hazards.", "cert.c3": "Audit scheme evaluated by the Global Food Safety Initiative (GFSI) covering GAP and GMP.",
         // Contacto
-        "contacto.titulo": "Commercial Contact", "contacto.desc": "Fill out the form below and our commercial team will contact you shortly.",
-        "contacto.lbl_tipo": "Contact type *", "contacto.opt1": "Inquiry", "contacto.opt2": "Feedback", "contacto.opt3": "Request", "contacto.opt4": "Quote",
-        "contacto.lbl_nombre": "Full name *", "contacto.lbl_email": "Email address *", "contacto.lbl_telefono": "Phone", "contacto.lbl_empresa": "Company", "contacto.lbl_pais": "Country", "contacto.lbl_mensaje": "Message", "contacto.btn_enviar": "Send Message",
+        "contacto.titulo": "Contact Us", 
+        "contacto.desc": "Select the type of request and our commercial team will contact you shortly.",
+        "contacto.card_cotizacion": "Quote",
+        "contacto.card_consulta": "Inquiry",
+        "contacto.card_opinion": "Feedback / Comment",
+        "contacto.form_base": "Contact Form",
+        "contacto.form_cotizacion": "Quote Form",
+        "contacto.form_consulta": "Inquiry Form",
+        "contacto.form_opinion": "Feedback Form",
+        "contacto.lbl_nombre": "Full name *", 
+        "contacto.lbl_email": "Email address *", 
+        "contacto.lbl_telefono": "Phone", 
+        "contacto.lbl_empresa": "Company", 
+        "contacto.lbl_pais": "Country", 
+        "contacto.lbl_mensaje": "Detailed message", 
+        "contacto.lbl_producto": "Product of interest",
+        "contacto.lbl_volumen": "Estimated volume",
+        "contacto.ph_volumen": "E.g. 2 Containers",
+        "contacto.opt_seleccione": "-- Select --",
+        "contacto.opt_citricos": "Citrus",
+        "contacto.lbl_departamento": "Department",
+        "contacto.opt_comercial": "Commercial / Sales",
+        "contacto.opt_logistica": "Logistics",
+        "contacto.opt_admin": "Administration",
+        "contacto.lbl_asunto": "Subject",
+        "contacto.lbl_tipo_opinion": "Feedback type",
+        "contacto.opt_sugerencia": "Suggestion",
+        "contacto.opt_felicitacion": "Compliment",
+        "contacto.opt_reclamo": "Complaint",
+        "contacto.btn_enviar": "Send Message",
         // Footer
         "footer.desc": "Bringing the best fruit from Chile to the world. Passion for quality, respect for the environment, and commitment to our international clients.",
         "footer.sec_tit": "Sections", "footer.cont_tit": "Contact", "footer.dir": "Route 5 North Km. 471<br>La Serena, Coquimbo Region",
@@ -100,7 +154,7 @@ window.diccionario = {
 };
 
 window.cambiarIdioma = function(idioma) {
-    // 1. Cambiar los textos
+    // 1. Cambiar los textos (innerHTML)
     const elementos = document.querySelectorAll('[data-i18n]');
     elementos.forEach(el => {
         const clave = el.getAttribute('data-i18n');
@@ -109,7 +163,16 @@ window.cambiarIdioma = function(idioma) {
         }
     });
 
-    // 2. Actualizar botones del Footer
+    // 2. Cambiar los placeholders
+    const elementosPlaceholder = document.querySelectorAll('[data-i18n-placeholder]');
+    elementosPlaceholder.forEach(el => {
+        const clave = el.getAttribute('data-i18n-placeholder');
+        if (window.diccionario[idioma] && window.diccionario[idioma][clave]) {
+            el.placeholder = window.diccionario[idioma][clave];
+        }
+    });
+
+    // 3. Actualizar botones del Footer
     const btnEs = document.getElementById('btn-es');
     const btnEn = document.getElementById('btn-en');
     if (btnEs && btnEn) {
@@ -122,21 +185,19 @@ window.cambiarIdioma = function(idioma) {
         }
     }
 
-    // 3. Actualizar Banderas del Navbar
+    // 4. Actualizar Banderas del Navbar
     const navBtnEs = document.getElementById('nav-btn-es');
     const navBtnEn = document.getElementById('nav-btn-en');
     if (navBtnEs && navBtnEn) {
         if (idioma === 'es') {
-            // Bandera ES activa
             navBtnEs.className = "w-7 h-7 rounded-full overflow-hidden border-2 border-norfrut-green transition-all transform scale-110 shadow-md opacity-100";
             navBtnEn.className = "w-7 h-7 rounded-full overflow-hidden border-2 border-transparent opacity-50 hover:opacity-100 transition-all transform hover:scale-110";
         } else {
-            // Bandera EN activa
             navBtnEn.className = "w-7 h-7 rounded-full overflow-hidden border-2 border-norfrut-green transition-all transform scale-110 shadow-md opacity-100";
             navBtnEs.className = "w-7 h-7 rounded-full overflow-hidden border-2 border-transparent opacity-50 hover:opacity-100 transition-all transform hover:scale-110";
         }
     }
 
-    // 4. Guardar preferencia
+    // 5. Guardar preferencia
     localStorage.setItem('norfrut-idioma', idioma);
 };
