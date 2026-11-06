@@ -74,7 +74,12 @@ window.diccionario = {
         
         // --- DICCIONARIO PARA JS (Modal) ---
         "mes.Enero": "Enero", "mes.Febrero": "Febrero", "mes.Marzo": "Marzo", "mes.Abril": "Abril", "mes.Mayo": "Mayo", "mes.Junio": "Junio", "mes.Julio": "Julio", "mes.Agosto": "Agosto", "mes.Septiembre": "Septiembre", "mes.Octubre": "Octubre", "mes.Noviembre": "Noviembre", "mes.Diciembre": "Diciembre",
-        "cat.Seedless Verde": "Seedless Verde", "cat.Seedless Negra": "Seedless Negra", "cat.Seedless Roja": "Seedless Roja", "cat.Seeded Red Globe": "Seeded Red Globe"
+        "cat.Seedless Verde": "Seedless Verde", "cat.Seedless Negra": "Seedless Negra", "cat.Seedless Roja": "Seedless Roja", "cat.Seeded Red Globe": "Seeded Red Globe",
+
+        // --- CHATBOT ---
+        "msg.Chatbot": "¡Hola! 🌱 ¿Buscas información sobre variedades de frutas, disponibilidad estacional o cotizar volúmenes de exportación? Cuéntame qué necesitas o elige una opción:",
+        "option.catalog": "🍎 Ver catálogo de frutas", "option.contact": "✉️ Cómo contactarnos",
+        "nombre.chat": "Asistente Comercial", "export.disp": "Exportación & Disponibilidad", "consulta.chat": "Escribe tu consulta aquí..."
     },
     en: {
         // Nav
@@ -149,7 +154,12 @@ window.diccionario = {
         
         // --- DICCIONARIO PARA JS (Modal) ---
         "mes.Enero": "January", "mes.Febrero": "February", "mes.Marzo": "March", "mes.Abril": "April", "mes.Mayo": "May", "mes.Junio": "June", "mes.Julio": "July", "mes.Agosto": "August", "mes.Septiembre": "September", "mes.Octubre": "October", "mes.Noviembre": "November", "mes.Diciembre": "December",
-        "cat.Seedless Verde": "Green Seedless", "cat.Seedless Negra": "Black Seedless", "cat.Seedless Roja": "Red Seedless", "cat.Seeded Red Globe": "Seeded Red Globe"
+        "cat.Seedless Verde": "Green Seedless", "cat.Seedless Negra": "Black Seedless", "cat.Seedless Roja": "Red Seedless", "cat.Seeded Red Globe": "Seeded Red Globe",
+
+        // --- CHATBOT ---
+        "msg.Chatbot": "Hi! 🌱 Are you looking for information on fruit varieties, seasonal availability, or export volume quotes? Let me know what you need or choose an option",
+        "option.catalog": "🍎 View the fruit catalog", "option.contact": "✉️ How to Contact Us",
+        "nombre.chat": "Sales Assistant", "export.disp": "Exports & Availability", "consulta.chat": "Type your question here..."
     }
 };
 
