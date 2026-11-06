@@ -553,31 +553,31 @@
             <div class="flex items-center space-x-2">
                 <span class="w-3 h-3 bg-norfrut-green rounded-full animate-pulse"></span>
                 <div>
-                    <h3 class="font-bold text-sm">Asistente Comercial</h3>
-                    <p class="text-xs text-gray-300">Exportación & Disponibilidad</p>
+                    <h3 data-i18n="nombre.chat" class="font-bold text-sm">Asistente Comercial</h3>
+                    <p data-i18n="export.disp" class="text-xs text-gray-300">Exportación & Disponibilidad</p>
                 </div>
             </div>
             <button onclick="toggleChat()" class="text-white hover:text-gray-300 font-bold p-1 transition-colors">✕</button>
         </div>
         <div id="chatBox" class="p-4 flex-1 overflow-y-auto space-y-3 min-h-[280px] max-h-[340px] flex flex-col bg-gray-50">
-            <div class="message p-3 rounded-2xl max-w-[85%] text-sm leading-relaxed bg-white border border-gray-200 text-gray-700 self-start rounded-bl-sm shadow-sm">
+            <div data-i18n="msg.Chatbot" class="message p-3 rounded-2xl max-w-[85%] text-sm leading-relaxed bg-white border border-gray-200 text-gray-700 self-start rounded-bl-sm shadow-sm">
                 ¡Hola! 🌱 ¿Buscas información sobre variedades de frutas, disponibilidad estacional o cotizar volúmenes de exportación? Cuéntame qué necesitas o elige una opción:
             </div>
             
             <!-- Contenedor de Opciones Rápidas Iniciales -->
             <div id="quick-options" class="flex flex-col gap-2 mt-1 self-start w-[85%]">
-                <button onclick="document.getElementById('productos').scrollIntoView({ behavior: 'smooth' }); toggleChat(); document.getElementById('quick-options').style.display='none';" class="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-norfrut-green hover:text-norfrut-green transition-colors text-xs font-semibold py-2 px-3 rounded-xl shadow-sm text-left flex items-center justify-between w-full">
-                    <span>🍎 Ver catálogo de frutas</span>
+                <button onclick="document.getElementById('productos').scrollIntoView({ behavior: 'smooth' }); toggleChat();" class="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-norfrut-green hover:text-norfrut-green transition-colors text-xs font-semibold py-2 px-3 rounded-xl shadow-sm text-left flex items-center justify-between w-full">
+                    <span data-i18n="option.catalog">🍎 Ver catálogo de frutas</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </button>
-                <button onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' }); toggleChat(); document.getElementById('quick-options').style.display='none';" class="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-norfrut-green hover:text-norfrut-green transition-colors text-xs font-semibold py-2 px-3 rounded-xl shadow-sm text-left flex items-center justify-between w-full">
-                    <span>✉️ Cómo contactarnos</span>
+                <button onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' }); toggleChat();" class="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-norfrut-green hover:text-norfrut-green transition-colors text-xs font-semibold py-2 px-3 rounded-xl shadow-sm text-left flex items-center justify-between w-full">
+                    <span data-i18n="option.contact">✉️ Cómo contactarnos</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </button>
             </div>
         </div>
         <div class="p-3 bg-white border-t border-gray-200 flex items-center gap-2">
-            <input type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="Escribe tu consulta aquí..." class="flex-1 bg-gray-50 text-gray-800 placeholder-gray-400 text-sm rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-norfrut-green border border-gray-200 transition-shadow">
+            <input data-i18n="consulta.chat" type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="Escribe tu consulta aquí..." class="flex-1 bg-gray-50 text-gray-800 placeholder-gray-400 text-sm rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-norfrut-green border border-gray-200 transition-shadow">
             <button onclick="sendMessage()" class="bg-norfrut-green hover:bg-green-600 text-white p-2.5 rounded-xl font-bold transition-colors flex items-center justify-center shadow-sm">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>
@@ -587,7 +587,7 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./frontend/js/main.js"></script>
-    <<script src="./frontend/js/i18n.js"></script>
+    <script src="./frontend/js/i18n.js"></script>
     <script src="./backend/chatbot.js"></script>
     <script>
         AOS.init({ once: true, offset: 50 });

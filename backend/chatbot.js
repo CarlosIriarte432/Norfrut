@@ -1,5 +1,5 @@
 // Apunta a tu backend local para pruebas
-const API_URL = "https://norfrut.onrender.com/api/chat";
+const API_URL = "http://localhost:3000/api/chat";
 
 function toggleChat() {
     const chatWindow = document.getElementById("chat-window");
@@ -21,12 +21,6 @@ async function sendMessage() {
 
     if (!userMessage) return;
 
-    // Ocultar opciones rápidas si el usuario decide escribir[cite: 9]
-    const quickOptions = document.getElementById("quick-options");
-    if (quickOptions) {
-        quickOptions.style.display = 'none';
-    }
-
     appendMessage(userMessage, "user");
     inputField.value = "";
 
@@ -46,11 +40,11 @@ async function sendMessage() {
         if (response.ok && data.choices && data.choices[0].message.content) {
             let botReply = data.choices[0].message.content;
             
-            // Limpieza de formato markdown de la IA[cite: 9]
+            // Limpieza de formato markdown de la IA
             botReply = botReply.replaceAll('**', '').replaceAll('*', '');
             appendMessage(botReply, "bot");
 
-            // Evaluación de intención de contacto[cite: 9]
+            // Evaluación de intención de contacto
             const contactKeywords = ['contacto', 'cotizar', 'equipo comercial', 'exportación'];
             const requiresContact = contactKeywords.some(keyword => botReply.toLowerCase().includes(keyword));
 
@@ -65,7 +59,7 @@ async function sendMessage() {
         console.error("Error de conexión:", error);
         const loadingElem = document.getElementById(loadingId);
         if (loadingElem) loadingElem.remove();
-        appendMessage("Error al conectar con el asistente.", "bot");
+        appendMessage("Error al conectar con el asistente. Verifica que el servidor local esté corriendo.", "bot");
     }
 }
 
@@ -107,7 +101,7 @@ function appendContactActions() {
         document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
         toggleChat(); 
     };
-    // Estilos alineados con la paleta de Norfrut[cite: 9]
+    
     formBtn.classList.add("bg-norfrut-navy", "text-white", "text-xs", "font-bold", "px-4", "py-2", "rounded-lg", "shadow-sm", "hover:bg-norfrut-green", "transition-colors");
     formBtn.textContent = "Cotizar / Ir al Formulario";
 
