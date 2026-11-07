@@ -71,6 +71,8 @@ window.diccionario = {
         "footer.desc": "Llevando la mejor fruta de Chile al mundo. Pasión por la calidad, respeto por el medio ambiente y compromiso con nuestros clientes internacionales.",
         "footer.sec_tit": "Secciones", "footer.cont_tit": "Contacto", "footer.dir": "Ruta 5 Norte Km. 471<br>La Serena, Región de Coquimbo",
         "footer.copyright": "&copy; 2026 Norfrut. Todos los derechos reservados.", "footer.developed": "Desarrollado por",
+        "footer.privacidad": "Política de Privacidad",
+        "footer.proteccion": "Protección de Datos",
         
         // --- DICCIONARIO PARA JS (Modal) ---
         "mes.Enero": "Enero", "mes.Febrero": "Febrero", "mes.Marzo": "Marzo", "mes.Abril": "Abril", "mes.Mayo": "Mayo", "mes.Junio": "Junio", "mes.Julio": "Julio", "mes.Agosto": "Agosto", "mes.Septiembre": "Septiembre", "mes.Octubre": "Octubre", "mes.Noviembre": "Noviembre", "mes.Diciembre": "Diciembre",
@@ -152,7 +154,8 @@ window.diccionario = {
         "footer.desc": "Bringing the best fruit from Chile to the world. Passion for quality, respect for the environment, and commitment to our international clients.",
         "footer.sec_tit": "Sections", "footer.cont_tit": "Contact", "footer.dir": "Route 5 North Km. 471<br>La Serena, Coquimbo Region",
         "footer.copyright": "&copy; 2026 Norfrut. All rights reserved.", "footer.developed": "Developed by",
-        
+        "footer.privacidad": "Privacy Policy",
+        "footer.proteccion": "Data Protection",
         // --- DICCIONARIO PARA JS (Modal) ---
         "mes.Enero": "January", "mes.Febrero": "February", "mes.Marzo": "March", "mes.Abril": "April", "mes.Mayo": "May", "mes.Junio": "June", "mes.Julio": "July", "mes.Agosto": "August", "mes.Septiembre": "September", "mes.Octubre": "October", "mes.Noviembre": "November", "mes.Diciembre": "December",
         "cat.Seedless Verde": "Green Seedless", "cat.Seedless Negra": "Black Seedless", "cat.Seedless Roja": "Red Seedless", "cat.Seeded Red Globe": "Seeded Red Globe",
