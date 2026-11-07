@@ -188,8 +188,15 @@ window.cambiarIdioma = function(idioma) {
             el.placeholder = window.diccionario[idioma][clave];
         }
     });
+    // 3. Cambiar imagen de Mercados dinámicamente
+    const imgMercados = document.getElementById('img-mercados');
+    if (imgMercados) {
+        imgMercados.src = idioma === 'es' 
+            ? './frontend/src/markets_es.png' 
+            : './frontend/src/markets_en.png';
+    }
 
-    // 3. Actualizar botones del Footer
+    // 4. Actualizar botones del Footer
     const btnEs = document.getElementById('btn-es');
     const btnEn = document.getElementById('btn-en');
     if (btnEs && btnEn) {
@@ -202,7 +209,7 @@ window.cambiarIdioma = function(idioma) {
         }
     }
 
-    // 4. Actualizar Banderas del Navbar
+    // 5. Actualizar Banderas del Navbar
     const navBtnEs = document.getElementById('nav-btn-es');
     const navBtnEn = document.getElementById('nav-btn-en');
     if (navBtnEs && navBtnEn) {
@@ -215,6 +222,6 @@ window.cambiarIdioma = function(idioma) {
         }
     }
 
-    // 5. Guardar preferencia
+    // 6. Guardar preferencia
     localStorage.setItem('norfrut-idioma', idioma);
 };
