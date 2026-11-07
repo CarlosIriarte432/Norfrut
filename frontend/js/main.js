@@ -1,15 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mostrar/Ocultar Navbar al scrollear fuera del Hero
+    // 1. Lógica Navbar Scroll (Acelerada y dividida)
     const nav = document.getElementById('main-nav');
-    const heroHeight = window.innerHeight * 0.8; // 80% de la pantalla
+    const navLogo = document.getElementById('nav-logo');
+    const navLinks = document.getElementById('nav-links');
+    
+    // Cambiamos el threshold a solo 80 píxeles para que reaccione rapidísimo
+    const scrollThreshold = 80; 
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > heroHeight) {
-            // Mostrar Navbar
-            nav.classList.remove('-translate-y-full', 'opacity-0');
+        if (window.scrollY > scrollThreshold) {
+            // Bajas un poco: Aparece el fondo blanco, el logo y los links
+            nav.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+            nav.classList.remove('bg-transparent');
+            
+            navLogo.classList.remove('opacity-0', 'pointer-events-none');
+            navLinks.classList.remove('opacity-0', 'pointer-events-none');
         } else {
-            // Ocultar Navbar
-            nav.classList.add('-translate-y-full', 'opacity-0');
+            // Estás arriba: Fondo transparente, se ocultan logo y links (quedan solo banderas)
+            nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+            nav.classList.add('bg-transparent');
+            
+            navLogo.classList.add('opacity-0', 'pointer-events-none');
+            navLinks.classList.add('opacity-0', 'pointer-events-none');
         }
     });
         // Configuración de datos. Añade las rutas de tus imágenes en 'img'
@@ -98,25 +110,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para construir la tabla (optimizada)
     const construirTabla = (productoKey) => {
         const data = productosData[productoKey];
-        modalTitle.textContent = data.titulo;
-        modalTitle.className = `text-3xl leading-6 font-bold uppercase ${data.color}`;
+        
+        // Asignamos la llave de traducción al título del modal
+        modalTitle.setAttribute('data-i18n', data.tituloKey);
         modalImage.src = data.img;
 
-        // thead sticky para que al bajar en la tabla de uvas los meses sigan visibles
+        // Construimos el HTML inyectando las etiquetas data-i18n directamente
         let tableHTML = `<table class="min-w-full divide-y divide-gray-200 border text-sm relative">
             <thead class="bg-gray-50 sticky top-0 z-10 shadow-sm">
                 <tr>
-                    <th class="px-4 py-3 text-left font-semibold text-gray-600 border-r w-48 bg-gray-50">Variedad</th>
-                    ${data.meses.map(mes => `<th class="px-2 py-3 text-center font-semibold text-gray-600 border-r bg-gray-50">${mes}</th>`).join('')}
+                    <th data-i18n="modal.th_variedad" class="px-4 py-3 text-left font-semibold text-gray-600 border-r w-48 bg-gray-50">Variedad</th>
+                    ${data.meses.map(mes => `<th data-i18n="mes.${mes}" class="px-2 py-3 text-center font-semibold text-gray-600 border-r bg-gray-50">${mes}</th>`).join('')}
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">`;
 
         data.variedades.forEach(varData => {
             if (varData.categoria) {
-                tableHTML += `<tr class="bg-gray-100">
-                    <td colspan="${data.meses.length + 1}" class="px-4 py-2 font-bold text-norfrut-navy text-xs uppercase">${varData.categoria}</td>
-                </tr>`;
+                // Inyectamos data-i18n para la categoría (ej: cat.Seedless Verde)
+                tableHTML += `<tr class="bg-gray-100"><td colspan="${data.meses.length + 1}" data-i18n="cat.${varData.categoria}" class="px-4 py-2 font-bold text-norfrut-navy text-xs uppercase">${varData.categoria}</td></tr>`;
             } else {
                 tableHTML += `<tr>
                     <td class="px-4 py-3 font-medium text-gray-800 border-r whitespace-nowrap">${varData.nombre}</td>
@@ -127,6 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         tableHTML += `</tbody></table>`;
         tableContainer.innerHTML = tableHTML;
+
+    
+        const lang = localStorage.getItem('norfrut-idioma') || 'es';
+        window.cambiarIdioma(lang);
     };
 
 // Manejo de eventos Modal optimizado

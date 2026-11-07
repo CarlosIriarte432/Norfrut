@@ -25,6 +25,7 @@ window.diccionario = {
         "empresa.val4_tit": "Cumplir Normas", "empresa.val4_txt": "En todos nuestros procesos y despachos.",
         // Productos
         "prod.titulo": "Nuestros Productos", "prod.mandarinas": "Mandarinas", "prod.naranjas": "Naranjas", "prod.uvas": "Uvas", "prod.clementinas": "Clementinas", "prod.cerezas": "Cerezas", "prod.arandanos": "Arándanos",
+        "prod.desc": "Haga clic en cada producto para revisar nuestras variedades y su disponibilidad mensual.",
         // Modal
         "modal.subtitulo": "Disponibilidad por Variedad",
         "modal.th_variedad": "Variedad",
@@ -108,6 +109,7 @@ window.diccionario = {
         "empresa.val4_tit": "Compliance", "empresa.val4_txt": "In all our processes and shipments.",
         // Productos
         "prod.titulo": "Our Products", "prod.mandarinas": "Mandarins", "prod.naranjas": "Oranges", "prod.uvas": "Grapes", "prod.clementinas": "Clementines", "prod.cerezas": "Cherries", "prod.arandanos": "Blueberries",
+        "prod.desc": "Click on each product to check our varieties and their monthly availability.",
         // Modal
         "modal.subtitulo": "Availability by Variety",
         "modal.th_variedad": "Variety",

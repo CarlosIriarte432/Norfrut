@@ -39,33 +39,39 @@
 </head>
 <body class="font-sans antialiased text-gray-800 bg-gray-50 overflow-x-hidden">
 
-    <!-- Navbar -->
-    <nav id="main-nav" class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-500 -translate-y-full opacity-0">
+    <!-- Navbar (Banderas siempre visibles, el resto aparece al scrollear) -->
+    <nav id="main-nav" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0">
+                
+                <!-- Logo (Oculto en el Hero) -->
+                <div id="nav-logo" class="flex-shrink-0 transition-opacity duration-300 opacity-0 pointer-events-none">
                     <img src="./frontend/src/logo.png" alt="Norfrut Logo" class="h-12 w-auto">
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#inicio" data-i18n="nav.inicio" class="text-norfrut-navy font-semibold hover:text-norfrut-green transition">Inicio</a>
-                    <a href="#empresa" data-i18n="nav.empresa" class="text-norfrut-navy font-semibold hover:text-norfrut-green transition">La Empresa</a>
-                    <a href="#productos" data-i18n="nav.productos" class="text-norfrut-navy font-semibold hover:text-norfrut-green transition">Productos</a>
-                    <a href="#plantaciones" data-i18n="nav.plantaciones" class="text-norfrut-navy font-semibold hover:text-norfrut-green transition">Plantaciones</a>
-                    <a href="#mercados" data-i18n="nav.mercados" class="text-norfrut-navy font-semibold hover:text-norfrut-green transition">Mercados</a>
-                    <a href="#certificaciones" data-i18n="nav.calidad" class="text-norfrut-navy font-semibold hover:text-norfrut-green transition">Calidad</a>
+                
+                <!-- Contenedor Derecho -->
+                <div class="flex items-center">
                     
-                    <a href="#contacto" data-i18n="nav.contacto" class="flex items-center gap-2 px-5 py-2 bg-norfrut-navy text-white rounded-md hover:bg-norfrut-orange transition shadow-md">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                        Contacto
-                    </a>
+                    <!-- Enlaces y Contacto (Ocultos en el Hero) -->
+                    <div id="nav-links" class="hidden md:flex items-center space-x-6 transition-opacity duration-300 opacity-0 pointer-events-none">
+                        <a href="#inicio" data-i18n="nav.inicio" class="text-norfrut-navy font-semibold hover:text-norfrut-green transition">Inicio</a>
+                        <a href="#empresa" data-i18n="nav.empresa" class="text-norfrut-navy font-semibold hover:text-norfrut-green transition">La Empresa</a>
+                        <a href="#productos" data-i18n="nav.productos" class="text-norfrut-navy font-semibold hover:text-norfrut-green transition">Productos</a>
+                        <a href="#plantaciones" data-i18n="nav.plantaciones" class="text-norfrut-navy font-semibold hover:text-norfrut-green transition">Plantaciones</a>
+                        <a href="#mercados" data-i18n="nav.mercados" class="text-norfrut-navy font-semibold hover:text-norfrut-green transition">Mercados</a>
+                        <a href="#certificaciones" data-i18n="nav.calidad" class="text-norfrut-navy font-semibold hover:text-norfrut-green transition">Calidad</a>
+                        
+                        <a href="#contacto" data-i18n="nav.contacto" class="flex items-center gap-2 px-5 py-2 bg-norfrut-navy text-white rounded-md hover:bg-norfrut-orange transition shadow-md">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            Contacto
+                        </a>
 
-                    <!-- Línea separadora -->
-                    <div class="h-8 w-px bg-gray-200 mx-2"></div>
+                        <!-- Línea separadora -->
+                        <div class="h-8 w-px bg-gray-200 mx-2"></div>
+                    </div>
 
-                    <!-- Selector de Idioma (Banderas) -->
-                    <div class="flex items-center space-x-3">
+                    <!-- Selector de Idioma (Banderas Siempre Visibles) -->
+                    <div class="flex items-center space-x-3 ml-4">
                         <button onclick="cambiarIdioma('es')" id="nav-btn-es" class="w-7 h-7 rounded-full overflow-hidden border-2 border-norfrut-green transition-all transform scale-110 shadow-md">
                             <img src="https://flagcdn.com/w40/es.png" alt="Español" class="w-full h-full object-cover">
                         </button>
@@ -73,7 +79,7 @@
                             <img src="https://flagcdn.com/w40/us.png" alt="English" class="w-full h-full object-cover">
                         </button>
                     </div>
-                </div>
+
                 </div>
             </div>
         </div>
@@ -190,8 +196,11 @@
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 data-i18n="prod.titulo" class="text-3xl font-bold text-norfrut-navy uppercase tracking-wide">Nuestros Productos</h2>
                 <div class="w-24 h-1 bg-norfrut-green mx-auto mt-4"></div>
-            </div>
-            
+                <br>
+                <p data-i18n="prod.desc" class="max-w-4xl mx-auto text-gray-600 text-lg">
+                    Haga clic en cada producto para revisar nuestras variedades y su disponibilidad mensual.
+                </p>
+            </div>            
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 <!-- Mandarinas -->
                 <div class="producto-card bg-white rounded-xl overflow-hidden shadow hover:shadow-xl transition-all cursor-pointer border-b-4 border-norfrut-orange" data-producto="mandarinas" data-aos="fade-up" data-aos-delay="100">
@@ -365,7 +374,7 @@
     <section id="mercados" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 data-i18n="mercados.titulo" class="text-3xl font-bold text-norfrut-navy uppercase tracking-wide mb-12">Mercados de Exportación</h2>
-            <img src="./frontend/src/markets.jpg" alt="Mapa de exportaciones" class="mx-auto max-w-4xl w-full opacity-90" data-aos="zoom-in">
+            <img src="./frontend/src/markets_es.png" alt="Mapa de exportaciones" class="mx-auto max-w-4xl w-full opacity-90" data-aos="zoom-in">
         </div>
     </section>
 
@@ -380,17 +389,14 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-xl shadow border border-gray-100 flex flex-col items-center" data-aos="fade-up">
                     <img src="./frontend/src/cert/cert1.png" alt="GlobalG.A.P." class="h-38 object-contain mb-6">
-                    <h4 class="font-bold text-norfrut-green mb-2">GlobalG.A.P.</h4>
                     <p data-i18n="cert.c1" class="text-sm text-gray-500 text-center">Normas internacionalmente reconocidas sobre las buenas prácticas agrícolas gestionadas por Food Plus GmbH.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow border border-gray-100 flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
-                    <img src="./frontend/src/cert/cert2.jpg" alt="HACCP" class="h-38 object-contain mb-6">
-                    <h4 class="font-bold text-norfrut-navy mb-2">HACCP / APPCC</h4>
+                    <img src="./frontend/src/cert/cert2.jpg" alt="HACCP" class="h-45 object-contain mb-6">
                     <p data-i18n="cert.c2" class="text-sm text-gray-500 text-center">Método operativo estructurado para identificar riesgos de inocuidad alimentaria y evitar peligros.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow border border-gray-100 flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
                     <img src="./frontend/src/cert/cert3.jpg" alt="primusGFS" class="h-38 object-contain mb-6">
-                    <h4 class="font-bold text-black mb-2">primusGFS</h4>
                     <p data-i18n="cert.c3" class="text-sm text-gray-500 text-center">Esquema de auditoría evaluado por Global Food Safety Initiative (GFSI) que cubre GAP y GMP.</p>
                 </div>
             </div>
@@ -544,7 +550,6 @@
     <footer class="bg-norfrut-navy text-white pt-16 pb-8 border-t-4 border-norfrut-green">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                
                 <div class="flex flex-col items-start">
                     <div class="bg-white/95 px-4 py-3 rounded-xl mb-6 inline-block shadow-md">
                         <img src="./frontend/src/logo.png" alt="Norfrut Logo" class="h-10 w-auto">
