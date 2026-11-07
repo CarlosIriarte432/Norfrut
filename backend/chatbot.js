@@ -45,7 +45,7 @@ async function sendMessage() {
             appendMessage(botReply, "bot");
 
             // Evaluación de intención de contacto
-            const contactKeywords = ['contacto', 'cotizar', 'equipo comercial', 'exportación'];
+            const contactKeywords = ['contacto', 'cotizar', 'equipo comercial', 'exportación', 'contact', 'quote', 'export', 'sales'];
             const requiresContact = contactKeywords.some(keyword => botReply.toLowerCase().includes(keyword));
 
             if (requiresContact) {
@@ -103,7 +103,19 @@ function appendContactActions() {
     };
     
     formBtn.classList.add("bg-norfrut-navy", "text-white", "text-xs", "font-bold", "px-4", "py-2", "rounded-lg", "shadow-sm", "hover:bg-norfrut-green", "transition-colors");
-    formBtn.textContent = "Cotizar / Ir al Formulario";
+    
+    // Asignar el atributo para que reaccione a los cambios de idioma futuros
+    formBtn.setAttribute("data-i18n", "chat.btn_cotizar");
+    
+    // Leer el idioma actual al momento de crearlo (por defecto 'es')
+    const idiomaActual = localStorage.getItem('norfrut-idioma') || 'es';
+    
+    // Extraer el texto correspondiente desde el diccionario global
+    if (window.diccionario && window.diccionario[idiomaActual]) {
+        formBtn.textContent = window.diccionario[idiomaActual]["chat.btn_cotizar"];
+    } else {
+        formBtn.textContent = "Cotizar / Ir al Formulario"; // Respaldo
+    }
 
     actionsDiv.appendChild(formBtn);
     chatBox.appendChild(actionsDiv);

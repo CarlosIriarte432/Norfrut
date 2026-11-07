@@ -80,7 +80,7 @@ window.diccionario = {
         "msg.Chatbot": "¡Hola! 🌱 ¿Buscas información sobre variedades de frutas, disponibilidad estacional o cotizar volúmenes de exportación? Cuéntame qué necesitas o elige una opción:",
         "option.catalog": "🍎 Ver catálogo de frutas", "option.contact": "✉️ Cómo contactarnos",
         "nombre.chat": "Asistente Comercial", "export.disp": "Exportación & Disponibilidad", "consulta.chat": "Escribe tu consulta aquí...",
-        "consulta.chat": "Escribe tu consulta aquí...",
+        "consulta.chat": "Escribe tu consulta aquí...", "chat.btn_cotizar": "Cotizar / Ir al Formulario"
     },
     en: {
         // Nav
@@ -161,7 +161,7 @@ window.diccionario = {
         "msg.Chatbot": "Hi! 🌱 Are you looking for information on fruit varieties, seasonal availability, or export volume quotes? Let me know what you need or choose an option",
         "option.catalog": "🍎 View the fruit catalog", "option.contact": "✉️ How to Contact Us",
         "nombre.chat": "Sales Assistant", "export.disp": "Exports & Availability", "consulta.chat": "Type your question here...",
-        "consulta.chat": "Type your inquiry here...",
+        "consulta.chat": "Type your inquiry here...", "chat.btn_cotizar": "Quote / Go to Form"
     }
 };
 
