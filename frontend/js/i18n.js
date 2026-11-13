@@ -192,8 +192,8 @@ window.cambiarIdioma = function(idioma) {
     const imgMercados = document.getElementById('img-mercados');
     if (imgMercados) {
         imgMercados.src = idioma === 'es' 
-            ? './frontend/src/markets_es.png' 
-            : './frontend/src/markets_en.png';
+            ? 'https://res.cloudinary.com/uuiud8i6/image/upload/v1794575308/markets_es.png' 
+            : 'https://res.cloudinary.com/uuiud8i6/image/upload/v1794575307/markets_en.png';
     }
 
     // 4. Actualizar botones del Footer
