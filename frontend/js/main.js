@@ -27,21 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Configuración de datos. Añade las rutas de tus imágenes en 'img'
     const productosData = {
         mandarinas: {
-            titulo: 'Mandarinas', color: 'text-norfrut-orange', img: './frontend/src/frutas/mandarinas.jpg',
+            titulo: 'Mandarinas', color: 'text-norfrut-orange', img: 'https://res.cloudinary.com/uuiud8i6/image/upload/v1794575295/mandarinas.jpg',
             meses: ['Junio', 'Julio', 'Agosto', 'Septiembre'],
             variedades: [ { nombre: 'Murcott', disp: { 'Junio': [0,0,0,1], 'Julio': [1,1,1,1], 'Agosto': [1,1,1,1], 'Septiembre': [1,1,0,0] } } ]
         },
-        naranjas: {
-            titulo: 'Naranjas', color: 'text-norfrut-red', img: './frontend/src/frutas/naranjas.png',
-            meses: ['Junio', 'Julio'],
-            variedades: [
-                { nombre: 'Cara Cara', disp: { 'Julio': [0,1,1,1] } },
-                { nombre: 'Fujumoto', disp: { 'Junio': [0,1,1,1], 'Julio': [1,1,0,0] } },
-                { nombre: 'Washington', disp: { 'Junio': [0,1,1,1], 'Julio': [1,1,1,0] } }
-            ]
-        },
         uvas: {
-            titulo: 'Uvas', color: 'text-norfrut-green', img: './frontend/src/frutas/uvas.png',
+            titulo: 'Uvas', color: 'text-norfrut-green', img: 'https://res.cloudinary.com/uuiud8i6/image/upload/v1794575297/uvas.png',
             meses: ['Noviembre', 'Diciembre', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
             variedades: [
                 { categoria: 'Seedless Verde' },
@@ -64,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         clementinas: {
-            titulo: 'Clementinas', color: 'text-norfrut-orange', img: './frontend/src/frutas/clementinas.png',
+            titulo: 'Clementinas', color: 'text-norfrut-orange', img: 'https://res.cloudinary.com/uuiud8i6/image/upload/v1794575294/clementinas.png',
             meses: ['Abril', 'Mayo', 'Junio'],
             variedades: [
                 { nombre: 'Clemenules', disp: { 'Abril': [0,0,0,1], 'Mayo': [1,1,1,1], 'Junio': [1,1,0,0] } },
@@ -73,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         cerezas: {
-            titulo: 'Cerezas', color: 'text-red-700', img: './frontend/src/frutas/cerezas.png',
+            titulo: 'Cerezas', color: 'text-red-700', img: 'https://res.cloudinary.com/uuiud8i6/image/upload/v1794575293/cerezas.png',
             meses: ['Octubre', 'Noviembre', 'Diciembre'],
             variedades: [
                 { nombre: 'Lapins', disp: { 'Octubre': [0,0,0,1], 'Noviembre': [1,1,1,1], 'Diciembre': [1,0,0,0] } },
@@ -82,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         arandanos: {
-            titulo: 'Arándanos', color: 'text-norfrut-navy', img: './frontend/src/frutas/arandanos.png',
+            titulo: 'Arándanos', color: 'text-norfrut-navy', img: 'https://res.cloudinary.com/uuiud8i6/image/upload/v1794575300/arandanos.png',
             meses: ['Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
             variedades: [
                 { nombre: 'Emerald', disp: { 'Octubre': [1,1,1,1], 'Noviembre': [1,1,1,1], 'Diciembre': [1,0,0,0] } },
@@ -141,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tableContainer.innerHTML = tableHTML;
 
     
-        const lang = localStorage.getItem('norfrut-idioma') || 'es';
+        const lang = localStorage.getItem('norfrut-idioma') || 'en';
         window.cambiarIdioma(lang);
     };
 
@@ -267,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const llaveTraduccion = `contacto.form_${type}`;
             formTitulo.setAttribute('data-i18n', llaveTraduccion);
             
-            const lang = localStorage.getItem('norfrut-idioma') || 'es';
+            const lang = localStorage.getItem('norfrut-idioma') || 'en';
             if (window.diccionario[lang] && window.diccionario[lang][llaveTraduccion]) {
                 formTitulo.innerHTML = window.diccionario[lang][llaveTraduccion];
             }

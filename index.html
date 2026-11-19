@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth overflow-x-hidden">
+<html lang="en" class="scroll-smooth overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +46,7 @@
                 
                 <!-- Logo (Oculto en el Hero) -->
                 <div id="nav-logo" class="flex-shrink-0 transition-opacity duration-300 opacity-0 pointer-events-none">
-                    <img src="https://res.cloudinary.com/uuiud8i6/image/upload/v1794575308/norfrut-favicon.png" alt="Norfrut Logo" class="h-12 w-auto">
+                    <img src="https://res.cloudinary.com/uuiud8i6/image/upload/v1794575308/norfrut-logo.png" alt="Norfrut Logo" class="h-12 w-auto">
                 </div>
                 
                 <!-- Contenedor Derecho -->
@@ -71,13 +71,9 @@
                     </div>
 
                     <!-- Selector de Idioma (Banderas Siempre Visibles) -->
-                    <div class="flex items-center space-x-3 ml-4">
-                        <button onclick="cambiarIdioma('es')" id="nav-btn-es" class="w-7 h-7 rounded-full overflow-hidden border-2 border-norfrut-green transition-all transform scale-110 shadow-md">
-                            <img src="https://flagcdn.com/w40/es.png" alt="Español" class="w-full h-full object-cover">
-                        </button>
-                        <button onclick="cambiarIdioma('en')" id="nav-btn-en" class="w-7 h-7 rounded-full overflow-hidden border-2 border-transparent opacity-50 hover:opacity-100 transition-all transform hover:scale-110">
-                            <img src="https://flagcdn.com/w40/us.png" alt="English" class="w-full h-full object-cover">
-                        </button>
+                    <div class="flex items-center bg-norfrut-navy/85 backdrop-blur-sm rounded-lg p-1 border border-white/20 ml-4 shadow-md">
+                        <button onclick="cambiarIdioma('es')" id="nav-btn-es" class="px-3 py-1 rounded-md text-xs font-bold text-gray-300 hover:text-white transition-all">ESP</button>
+                        <button onclick="cambiarIdioma('en')" id="nav-btn-en" class="px-3 py-1 rounded-md text-xs font-bold text-white bg-norfrut-green shadow-sm transition-all">ENG</button>
                     </div>
 
                 </div>
@@ -201,20 +197,13 @@
                     Haga clic en cada producto para revisar nuestras variedades y su disponibilidad mensual.
                 </p>
             </div>            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <!-- Mandarinas -->
                 <div class="producto-card bg-white rounded-xl overflow-hidden shadow hover:shadow-xl transition-all cursor-pointer border-b-4 border-norfrut-orange" data-producto="mandarinas" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-32 p-4 flex items-center justify-center">
                         <img src="https://res.cloudinary.com/uuiud8i6/image/upload/v1794575295/mandarinas.jpg" alt="Mandarinas" class="object-contain h-full">
                     </div>
                     <div data-i18n="prod.mandarinas" class="bg-norfrut-orange text-center py-2 text-white font-semibold text-sm">Mandarinas</div>
-                </div>
-                <!-- Naranjas -->
-                <div class="producto-card bg-white rounded-xl overflow-hidden shadow hover:shadow-xl transition-all cursor-pointer border-b-4 border-norfrut-red" data-producto="naranjas" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-32 p-4 flex items-center justify-center">
-                        <img src="https://res.cloudinary.com/uuiud8i6/image/upload/v1794575296/naranjas.png" alt="Naranjas" class="object-contain h-full">
-                    </div>
-                    <div data-i18n="prod.naranjas" class="bg-norfrut-red text-center py-2 text-white font-semibold text-sm">Naranjas</div>
                 </div>
                 <!-- Uvas -->
                 <div class="producto-card bg-white rounded-xl overflow-hidden shadow hover:shadow-xl transition-all cursor-pointer border-b-4 border-norfrut-green" data-producto="uvas" data-aos="fade-up" data-aos-delay="300">
@@ -372,8 +361,16 @@
 
     <!-- Mercados -->
     <section id="mercados" class="py-20 bg-white">
+
+        
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 data-i18n="mercados.titulo" class="text-3xl font-bold text-norfrut-navy uppercase tracking-wide mb-12">Mercados de Exportación</h2>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-10" data-aos="fade-up">
+    <span data-i18n="mercados.na" class="px-6 py-2 bg-norfrut-navy text-white rounded-full font-semibold text-sm tracking-wide shadow-sm">North America</span>
+    <span data-i18n="mercados.asia" class="px-6 py-2 bg-norfrut-green text-white rounded-full font-semibold text-sm tracking-wide shadow-sm">Asia</span>
+    <span data-i18n="mercados.europa" class="px-6 py-2 bg-norfrut-orange text-white rounded-full font-semibold text-sm tracking-wide shadow-sm">Europe</span>
+</div>
             
             <!-- Imagen dinámica con ID -->
             <img id="img-mercados" src="https://res.cloudinary.com/uuiud8i6/image/upload/v1794575308/markets_es.png" alt="Mapa de exportaciones" class="mx-auto max-w-4xl w-full opacity-90" data-aos="zoom-in">

@@ -209,19 +209,24 @@ window.cambiarIdioma = function(idioma) {
         }
     }
 
-    // 5. Actualizar Banderas del Navbar
+    // Actualizar botones ESP / ENG del Navbar
     const navBtnEs = document.getElementById('nav-btn-es');
     const navBtnEn = document.getElementById('nav-btn-en');
     if (navBtnEs && navBtnEn) {
         if (idioma === 'es') {
-            navBtnEs.className = "w-7 h-7 rounded-full overflow-hidden border-2 border-norfrut-green transition-all transform scale-110 shadow-md opacity-100";
-            navBtnEn.className = "w-7 h-7 rounded-full overflow-hidden border-2 border-transparent opacity-50 hover:opacity-100 transition-all transform hover:scale-110";
+            navBtnEs.className = "px-3 py-1 rounded-md text-xs font-bold text-white bg-norfrut-green shadow-sm transition-all";
+            navBtnEn.className = "px-3 py-1 rounded-md text-xs font-bold text-gray-300 hover:text-white transition-all bg-transparent";
         } else {
-            navBtnEn.className = "w-7 h-7 rounded-full overflow-hidden border-2 border-norfrut-green transition-all transform scale-110 shadow-md opacity-100";
-            navBtnEs.className = "w-7 h-7 rounded-full overflow-hidden border-2 border-transparent opacity-50 hover:opacity-100 transition-all transform hover:scale-110";
+            navBtnEn.className = "px-3 py-1 rounded-md text-xs font-bold text-white bg-norfrut-green shadow-sm transition-all";
+            navBtnEs.className = "px-3 py-1 rounded-md text-xs font-bold text-gray-300 hover:text-white transition-all bg-transparent";
         }
     }
 
     // 6. Guardar preferencia
     localStorage.setItem('norfrut-idioma', idioma);
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    const idiomaActual = localStorage.getItem('norfrut-idioma') || 'en';
+    cambiarIdioma(idiomaActual);
+});
